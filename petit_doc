@@ -1,0 +1,71 @@
+section bss : declarer variable initialiser plus tard
+    RESB...
+    RESW...
+    RESD...
+    RESQ...
+    REST...
+    RESO...
+    RESY...
+    RESZ...
+    (voir en dessous suis le meme schema)
+
+section data : declarer variable initialiser immediatement
+    DB -> BYTE : initialise variable de 1 byte
+    DW -> WORD : ////////////////////// 2 ////
+    DD -> DOUBLE WORD : /////////////// 4 ////
+    DQ -> QUAD WORDS : //////////////// 8 ////
+    DT -> DOUBLE QUAD WORD : ////////// 16 ///
+    DO...
+    DY...
+    DZ...
+
+section text : le code
+
+L'ARITMETIQUE :
+    + : ADD
+    - : SUB
+    * : MUL
+    / : DIV
+    ++ : INC
+    -- : DEC
+    negate : NEG
+    (and add I pour toute les operation non signe)
+
+COMPARAISON :
+    == : JE
+    == 0 : JZ
+    != : JNE
+    != 0 : JNZ
+    > : JG
+    >= : JGE
+    unsigned JG : JA
+    unsigned JGE : JAE
+    JMP label : pas compris jump je sais pas quoi
+
+ARGUMENTS : 
+    rdi : 1er argument
+    rsi : 2eme argument
+    rdx : 3eme argument
+    rcx : 4/////////// (peut etre r10)
+    r8 : 5///////////
+    r9 : 6/////////
+    (After it is stack)
+    rsp : top of stack
+    imagine un main avec argv argc
+    [rsp + 8] : argv[0]
+    [rsp + 16] : argv[1]
+    ...
+
+FONCTION NECESSAIRE:
+    read : rax = 0x00
+    write : rax = 0x01
+
+
+La compilation :
+
+nasm -f elf64 ft_strlen.s
+gcc main1.c ft_strlen.o -o a.out
+
+
+
+
