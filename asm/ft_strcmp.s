@@ -11,8 +11,8 @@ ft_strcmp :
     jmp while
 
 while :
-    mov dl, byte [rdi + rcx]
-    sub dl, byte [rsi + rcx]    ;dl - rsi[rcx] (dl is neccary to have unsigned)
+    mov dl, [rdi + rcx]
+    sub dl, [rsi + rcx]    ;dl - rsi[rcx] (dl is neccary to have unsigned)
     cmp dl, 0
     jne end
     cmp byte [rdi + rcx], 0

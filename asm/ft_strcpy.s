@@ -12,8 +12,8 @@ ft_strcpy :
 while :
     cmp byte [rdi + rcx], 0         ;if (rdi[rcx] == 0)
     je end                          ;   -> call end
-    mov dl, byte [rsi + rcx]        ;(partie basse rdx)dl(8bits) = rsi[rcx]
-    mov byte [rdi + rcx], dl
+    mov dl, [rsi + rcx]        ;(partie basse rdx)dl(8bits) = rsi[rcx]
+    mov [rdi + rcx], dl
     cmp byte [rsi + rcx], 0         ;if (rsi[rcx] == 0)
     je end                          ;   -> call end
     inc rcx                         ;rcx++

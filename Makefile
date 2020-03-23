@@ -1,17 +1,20 @@
-NAME : libasm.a
+NAME = libasm.a
 
-SRCS : ft_strlen.s
+asm  = asm/
 
-OBJS : $(SRCS:.s=.o)
+SRCS = $(asm)ft_strlen.s $(asm)ft_read.s $(asm)ft_write.s $(asm)ft_strcpy.s $(asm)ft_strdup.s $(asm)ft_strcmp.s $(asm)ft_atoi_base.s
 
-%.o : %.s
-	nasm -f elf64 $< -o $@
+OBJS = $(SRCS:.s=.o)
+
+.s.o : $(SRCS)
+	nasm -f elf64 $<
 
 $(NAME) : $(OBJS)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 all : $(NAME)
+	
 
 clean :
 	rm -rf $(OBJS)

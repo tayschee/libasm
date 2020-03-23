@@ -1,3 +1,0 @@
-nasm -f elf64 fake_strlen.s (apt install -y nasm)
-gcc main.c fake_strlen.o (apt install -y gcc)
-./a.out
