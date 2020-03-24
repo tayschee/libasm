@@ -16,9 +16,9 @@ allocate_memory :
 		push	rdi
 		mov		rdi, rax
 		call 	malloc
+        pop     rsi
         cmp     rax, 0
 		je		end
-        pop     rsi
 		mov		rdi, rax
 		call	ft_strcpy
 		jmp     end
