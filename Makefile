@@ -24,4 +24,10 @@ fclean : clean
 
 re : fclean all
 
+test : all
+	gcc main.c $(NAME)
+
+ftest : fclean
+	rm a.out
+
 
