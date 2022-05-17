@@ -10,7 +10,7 @@
 
 ## About The Project
 [libasm](https://cdn.intra.42.fr/pdf/pdf/32882/fr.subject.pdf) is project of 42Paris to learn assembly \
-Like the previous project libft is consist to create library with commom C funtion code in assembly like strlen
+Like the previous project [libft](https://github.com/tayschee/Libft) is consist to create library with commom C function like strlen but this time coded in assembly
 
 ## Getting Started
 ### Installation
