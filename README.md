@@ -22,9 +22,13 @@ cd libasm
 
 ### Compilation
 To compile run:
-```make```
+```
+make
+```
 OR
-```make bonus```
+```
+make bonus
+```
 To add linked list functions in your library
 
 ### Use Library
